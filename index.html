@@ -552,59 +552,7 @@
       <canvas id="myChart"></canvas>
     </div>
   </div>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
-  <script>
-  // setup 
-  const data = {
-    labels: ['Ene', 'Feb', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-    datasets: [{
-      label: 'Weekly Sales',
-      data: [18, 12, 6, 9, 12, 3, 9],
-      backgroundColor: [
-        'rgba(255, 26, 104, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)',
-        'rgba(0, 0, 0, 0.2)'
-      ],
-      borderColor: [
-        'rgba(255, 26, 104, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)',
-        'rgba(0, 0, 0, 1)'
-      ],
-      borderWidth: 1
-    }]
-  };
 
-  // config 
-  const config = {
-    type: 'bar',
-    data,
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  };
-
-  // render init block
-  const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-  );
-
-  // Instantly assign Chart.js version
-  const chartVersion = document.getElementById('chartVersion');
-  chartVersion.innerText = Chart.version;
-  </script>
 
 
 <!-- ----------content----------- -->
@@ -691,6 +639,82 @@
   // arrows          : true,
   clickContent    : false
 });
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+<script>
+// setup 
+const data = {
+  //labels: [ 'Jul','Ago','Sep','Oct','Nov','Dic'],
+  datasets: [{
+    label: 'Weekly Sales',
+    data: [
+      {x: ['2022-10-02','2022-10-20'], y: 'Manual Mob.Sol.Esp 1'},
+      {x: ['2022-10-02','2022-10-20'], y: 'Manual Mob.Sol.Esp 2'},
+      {x: ['2022-10-07','2022-10-22'], y: 'Manual Mob.Sol.Esp 3'},
+      {x: ['2022-10-08','2022-10-22'], y: 'Manual Mob.Sol.Esp 4'},
+      {x: ['2022-10-15','2022-10-22'], y: 'Manual Mob.Sol.Esp 5'},
+      {x: ['2022-10-17','2022-10-26'], y: 'Manual Mob.Sol.Esp 6'},
+      {x: ['2022-10-20','2022-10-26'], y: 'Manual Mob.Sol.Esp 7'},
+      {x: ['2022-10-24','2022-10-26'], y: 'Manual Mob.Sol.Esp 8'},
+      {x: ['2022-10-01','2022-10-29'], y: 'Manual Mob.Sol.Esp 9'},
+      {x: ['2022-10-05','2022-10-29'], y: 'Manual Mob.Sol.Esp 10'},
+      {x: ['2022-10-05','2022-10-29'], y: 'Manual Mob.Sol.Esp 11'},
+      {x: ['2022-10-05','2022-10-30'], y: 'Manual Mob.Sol.Esp 12'},
+      {x: ['2022-10-29','2022-10-30'], y: 'Manual Mob.Sol.Esp 13'},]
+      ,
+    backgroundColor: [
+      'rgba(255, 26, 104, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(255, 206, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(153, 102, 255, 0.2)',
+      'rgba(255, 159, 64, 0.2)',
+      'rgba(0, 0, 0, 0.2)'
+    ],
+    borderColor: [
+      'rgba(255, 26, 104, 1)',
+      'rgba(54, 162, 235, 1)',
+      'rgba(255, 206, 86, 1)',
+      'rgba(75, 192, 192, 1)',
+      'rgba(153, 102, 255, 1)',
+      'rgba(255, 159, 64, 1)',
+      'rgba(0, 0, 0, 1)'
+    ],
+    borderWidth: 1,
+    borderSkipped: false,
+  }]
+};
+
+// config 
+const config = {
+  type: 'bar',
+  data,
+  options: {
+      indexAxis: 'y',
+    scales: {
+      x: {
+        type: 'time',
+        time: {
+          unit: 'day'
+        },
+        min: '2022-10-01',
+        max: '2022-10-31'
+      }
+    }
+  },
+  
+};
+
+// render init block
+const myChart = new Chart(
+  document.getElementById('myChart'),
+  config
+);
+
+// Instantly assign Chart.js version
+const chartVersion = document.getElementById('chartVersion');
+chartVersion.innerText = Chart.version;
 </script>
 </body>
 </html>
