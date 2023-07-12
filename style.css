@@ -246,7 +246,7 @@ nav ul li a:hover::after {
 }
 
 .services-list div:hover {
-    background: rgb(11, 3, 49);
+    background: rgb(31, 4, 167);
     transform: translateY(-10px);
     
 }
