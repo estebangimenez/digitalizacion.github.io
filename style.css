@@ -90,32 +90,47 @@ nav ul li a:hover::after {
 /* -----------------About------------- */
 
 #about {
-    padding: 80px 0;
+    padding: 80px 80px;
     color: black;
 }
 
 #RAAC {
-    padding: 80px 0;
+    padding: 80px 80px;
     color: black;
 }
 
 #Aplicaciones {
-    padding: 80px 0;
+    padding: 80px 80px;
+    color: bblack;
+}
+
+#services {
+    padding: 80px 80px;
     color: bblack;
 }
 
 #status {
-    padding: 80px 0;
+    padding: 80px 80px;
     color: black;
 }
 
 #regFirma {
-    padding: 80px 0;
+    padding: 80px 80px;
     color: black;
 }
 
 #pendientes {
-    padding: 80px 0;
+    padding: 80px 80px;
+    color: black;
+}
+
+#portfolio {
+    padding: 80px 80px;
+    color: black;
+}
+
+#procesos {
+    padding: 80px 80px;
     color: black;
 }
 
@@ -586,7 +601,7 @@ header{
             
 		}
 		header.abajo{
-			background: grey;
+			background: #fff;
 			padding: 5px 5px;
 		}
 
